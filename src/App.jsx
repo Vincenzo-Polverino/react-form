@@ -17,6 +17,12 @@ function App() {
     setNewPost('')
   }
 
+  function handleDelete(e) {
+    const postIndex = Number(e.target.getAttribute('data-index'))
+
+    const newPosts = posts.filter((post, index) => index != postIndex)
+    setPosts(newPosts)
+  }
 
   return (
     <>
@@ -39,7 +45,11 @@ function App() {
 
 
         <ul className="list-group">
-          {posts.map((post, index) => <li key={index} className="list-group-item">{post}</li>)}
+          {posts.map((post, index) => <li key={index} className="list-group-item d-flex justify-content-between">{post}
+
+
+            <button onClick={handleDelete} data-index={index}>Delete</button>
+          </li>)}
 
         </ul>
 

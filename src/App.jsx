@@ -48,7 +48,7 @@ function App() {
           {posts.map((post, index) => <li key={index} className="list-group-item d-flex justify-content-between">{post}
 
 
-            <button onClick={handleDelete} data-index={index}>Delete</button>
+            <button onClick={handleDelete} data-index={index}><i className="bi bi-trash"></i></button>
           </li>)}
 
         </ul>
